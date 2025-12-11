@@ -326,4 +326,7 @@ def admin(accion):
 # CÓDIGO DE SUPERVIVENCIA (AGREGADO)
 # ==========================================
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    # Render asigna un puerto en la variable de entorno PORT
+    # Si no la encuentra (como en tu PC), usará el 10000 por defecto
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
